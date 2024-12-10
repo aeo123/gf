@@ -1,4 +1,4 @@
-module github.com/gogf/gf/v2
+module github.com/aeo123/gf/v2
 
 go 1.20
 
