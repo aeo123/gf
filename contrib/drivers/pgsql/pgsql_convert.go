@@ -28,17 +28,17 @@ func (d *Driver) ConvertValueForField(ctx context.Context, fieldType string, fie
 
 	var fieldValueKind = reflect.TypeOf(fieldValue).Kind()
 
-	if fieldValueKind == reflect.Slice {
+	//if fieldValueKind == reflect.Slice {
 		// For pgsql, json or jsonb require '[]'
-		if !gstr.Contains(fieldType, "json") {
-			fieldValue = gstr.ReplaceByMap(gconv.String(fieldValue),
-				map[string]string{
-					"[": "{",
-					"]": "}",
-				},
-			)
-		}
-	}
+		//if !gstr.Contains(fieldType, "json") {
+		//	fieldValue = gstr.ReplaceByMap(gconv.String(fieldValue),
+		//		map[string]string{
+		//			"[": "{",
+		//			"]": "}",
+		//		},
+		//	)
+		//}
+	//}
 	return d.Core.ConvertValueForField(ctx, fieldType, fieldValue)
 }
 
